@@ -1,0 +1,129 @@
+﻿@model AspTimeSheet.Models.HookyFilterModelView
+
+@{
+    ViewData["Title"] = "Filter";
+}
+
+<h2>Filter</h2>
+
+<h4>HookyFilterModelView</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Filter">
+            <table class="table">
+                <tr>
+                    <td>
+                        <label asp-for="PositionName" class="control-label"></label>
+                    </td>
+                    <td>
+                        <select asp-for="PositionOperation" asp-items="Html.GetEnumSelectList<StringFilter>()" class="control-label"></select>
+                    </td>
+                    <td>
+                        <input asp-for="PositionName" class="control-label" />
+                    </td>
+                    <td>
+                        <span asp-validation-for="PositionName" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label asp-for="PersonName" class="control-label"></label>
+                    </td>
+                    <td>
+                        <select asp-for="PersonNameOperation" asp-items="Html.GetEnumSelectList<StringFilter>()" class="control-label"></select>
+                    </td>
+                    <td>
+                        <input asp-for="PersonName" class="control-label" />
+                    </td>
+                    <td>
+                        <span asp-validation-for="PersonName" class="text-danger"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label asp-for="PersonMiddleName" class="control-label"></label>
+                    </td>
+                    <td>
+                        <select asp-for="PersonMiddleNameOperation" asp-items="Html.GetEnumSelectList<StringFilter>()" class="control-label"></select>
+                    </td>
+                    <td>
+                        <input asp-for="PersonMiddleName" class="control-label" />
+                    </td>
+                    <td>
+                        <span asp-validation-for="PersonMiddleName" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label asp-for="PersonLastName" class="control-label"></label>
+                    </td>
+                    <td>
+                        <select asp-for="PersonLastNameOperation" asp-items="Html.GetEnumSelectList<StringFilter>()" class="control-label"></select>
+                    </td>
+                    <td>
+                        <input asp-for="PersonLastName" class="control-label" />
+                    </td>
+                    <td>
+                        <span asp-validation-for="PersonLastName" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label asp-for="Comment" class="control-label"></label>
+                    </td>
+                    <td>
+                        <select asp-for="CommentOperation" asp-items="Html.GetEnumSelectList<StringFilter>()" class="control-label"></select>
+                    </td>
+                    <td>
+                        <input asp-for="Comment" class="control-label" />
+                    </td>
+                    <td>
+                        <span asp-validation-for="Comment" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label asp-for="HookyDate" class="control-label"></label>
+                    </td>
+                    <td>
+                        <select asp-for="HookyDateOperation" asp-items="Html.GetEnumSelectList<DateFilter>()" class="control-label"></select>
+                    </td>
+                    <td>
+                        <input asp-for="HookyDate" class="control-label" />
+                    </td>
+                    <td>
+                        <span asp-validation-for="HookyDate" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label asp-for="HookyTime" class="control-label"></label>
+                    </td>
+                    <td>
+                        <select asp-for="HookyTimeOperation" asp-items="Html.GetEnumSelectList<DateFilter>()" class="control-label"></select>
+                    </td>
+                    <td>
+                        <input asp-for="HookyTime" class="control-label" />
+                    </td>
+                    <td>
+                        <span asp-validation-for="HookyTime" class="text-danger"></span>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
